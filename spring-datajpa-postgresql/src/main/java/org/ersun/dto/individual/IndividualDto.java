@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.ersun.dto.address.AddressDto;
-import org.ersun.model.identity.Identity;
 import org.ersun.model.individual.Individual;
 
 import java.util.ArrayList;
@@ -46,17 +45,23 @@ public class IndividualDto {
 
         List<IndividualDto> individualDtoList = new ArrayList<>();
 
-        individualList.forEach(individual -> {
+        individualList.forEach(individual ->
 
-            individualDtoList.add(new IndividualDto(
-                    individual.getId(),
-                    individual.getFirstName(),
-                    individual.getLastName(),
-                    individual.getAddresses().stream().map(AddressDto::of).collect(Collectors.toList()),
-                    individual.getIdentity().getIdentityNumber()
-            ));
+            individualDtoList.add(
 
-        });
+                    new IndividualDto(
+                            individual.getId(),
+                            individual.getFirstName(),
+                            individual.getLastName(),
+                            individual.getAddresses().stream().map(AddressDto::of).collect(Collectors.toList()),
+                            individual.getIdentity().getIdentityNumber()
+                    )
+
+            )
+
+        );
+
+
 
         return individualDtoList;
 

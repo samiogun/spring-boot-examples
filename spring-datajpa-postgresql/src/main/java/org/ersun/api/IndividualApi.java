@@ -36,7 +36,7 @@ public class IndividualApi {
         return new ResponseEntity<>(individualService.createIndividual(individual), CREATED);
     }
 
-    @GetMapping()
+    @GetMapping("/all")
     public ResponseEntity<List<IndividualDto>> getAllIndividuals(){
         return new ResponseEntity<>(individualService.getAllIndividuals(),OK);
     }
