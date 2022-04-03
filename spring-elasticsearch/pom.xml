@@ -14,7 +14,6 @@
     <packaging>war</packaging>
     <groupId>org.ersun</groupId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
     <description>Demo project for Spring Boot with ElasticSearch</description>
 
     <properties>
