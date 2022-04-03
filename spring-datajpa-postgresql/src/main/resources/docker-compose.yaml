@@ -5,6 +5,7 @@ services:
   postgresql:
     image: postgres
     container_name: Postgresql
+    user: root
     restart: always
     ports:
         - 5432:5432
@@ -17,6 +18,7 @@ services:
   adminer:
     image: adminer
     restart: always
+    user: root
     ports:
       - 8080:8080
 
