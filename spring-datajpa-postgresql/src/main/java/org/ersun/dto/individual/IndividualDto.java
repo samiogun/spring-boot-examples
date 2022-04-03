@@ -61,8 +61,6 @@ public class IndividualDto {
 
         );
 
-
-
         return individualDtoList;
 
     }
