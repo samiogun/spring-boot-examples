@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.ersun.dto.address.AddressDto;
 import org.ersun.model.individual.Individual;
 
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

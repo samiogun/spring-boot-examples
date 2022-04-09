@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.websocket.server.PathParam;
 import java.util.List;
 import java.util.Set;
@@ -26,12 +27,12 @@ public class IndividualApi {
     @Autowired
     private AddressService addressService;
 
-    @PostMapping()
-    public ResponseEntity<IndividualDto> createIndividual(@RequestBody CreateIndividualRequest request){
+    @PostMapping("v1/individual")
+    public ResponseEntity<IndividualDto> createIndividual(@Valid @RequestBody CreateIndividualRequest request){
         return new ResponseEntity<>(individualService.createIndividual(request), CREATED);
     }
 
-    @PostMapping("v1/individual/")
+    @PostMapping("")
     public ResponseEntity<Individual> createIndividual(@RequestBody Individual individual){
         return new ResponseEntity<>(individualService.createIndividual(individual), CREATED);
     }
